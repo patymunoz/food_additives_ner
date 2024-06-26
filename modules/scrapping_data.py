@@ -11,15 +11,11 @@ def scrape_description(url):
         soup = BeautifulSoup(response.content, "html.parser")
         content = soup.find("div", {"class": "mw-parser-output"})
         if content:
-            paragraphs = content.find_all("p", recursive=False)
+            paragraphs = content.find_all("p")
             description = ""
-            for para in paragraphs:
-                text = para.get_text().strip()
-                if text:
-                    description += text + "\n\n"
-            return description.strip()
-        else:
-            return "Can't find content of webpage."
+        for para in paragraphs:
+            description += para.get_text()
+        return description
     else:
         return f"Error accessing the page: {response.status_code}"
 
