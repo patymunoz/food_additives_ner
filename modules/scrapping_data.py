@@ -13,11 +13,10 @@ def scrape_description(url):
         if content:
             paragraphs = content.find_all("p")
             description = ""
-        for para in paragraphs:
-            description += para.get_text()
-        return description
-    else:
-        return f"Error accessing the page: {response.status_code}"
+            for para in paragraphs:
+                description += para.get_text()
+            return description.strip()
+    return None
 
 #-----------------# Processing #-----------------#
 def process_additives():
@@ -28,6 +27,7 @@ def process_additives():
 
     urls = additives.get("urls", [])
     descriptions = {}
+    failed_urls = []
 
     with Progress() as progress:
         task = progress.add_task("[green]Scraping descriptions...", total=len(urls))
@@ -35,7 +35,10 @@ def process_additives():
         for url in urls:
             name = url.split("/")[-1]
             description = scrape_description(url)
-            descriptions[name] = {"description": description}
+            if description:
+                descriptions[name] = {"description": description}
+            else:
+                failed_urls.append(url.split("/")[-1])
             progress.update(task, advance=1)
 
     path_raw = os.path.join('.', 'data', 'raw')
@@ -43,5 +46,10 @@ def process_additives():
     if not os.path.exists(path_raw):
         os.makedirs(path_raw)
 
+    # Save successful descriptions :)
     with open(os.path.join(path_raw, "additives_descriptions.json"), "w", encoding='utf-8') as f:
         json.dump(descriptions, f, ensure_ascii=False, indent=4)
+
+    # Save failed urls :(
+    with open(os.path.join(path_raw, "failed_urls.json"), "w", encoding='utf-8') as f:
+        json.dump(failed_urls, f, ensure_ascii=False, indent=4)
