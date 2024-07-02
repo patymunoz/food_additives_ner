@@ -38,4 +38,7 @@ tmp/
 data/raw/
 data/processed/
 data/structured/
+modules/pruebas.ipynb
+pruebas.ipynb
 
+.env/
