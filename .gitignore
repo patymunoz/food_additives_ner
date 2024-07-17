@@ -37,8 +37,7 @@ tmp/
 # specific
 data/raw/
 data/processed/
-data/structured/
-modules/pruebas.ipynb
-pruebas.ipynb
+data/interim/
+notebooks/pruebas.ipynb
 
 .env/
