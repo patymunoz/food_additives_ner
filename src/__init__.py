@@ -1,2 +1,2 @@
-from .scrapping_data import *
-from .generate_data_summ import *
+from scrapping.scrapping_data import *
+from summarization.generate_data_summ import *

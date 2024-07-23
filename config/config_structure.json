@@ -1,0 +1,12 @@
+{
+    "openai_model": "gpt-4o",
+    "batch_size": 10,
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "frequency_penalty": 0.8,
+    "presence_penalty": 0.8,
+    "messages": [
+        {"role": "system", "content": "You are a helpful information extraction system."},
+        {"role": "user", "content": "{prompt}"}
+    ]
+}

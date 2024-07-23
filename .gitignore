@@ -40,4 +40,4 @@ data/processed/
 data/interim/
 notebooks/pruebas.ipynb
 
-.env/
+config/.env/
