@@ -32,7 +32,7 @@ FOOD_ADDITIVES_NER
 └── requirements.in
 ```
 
-# Directory and File Descriptions
+# File Descriptions
 
 ## config
 
@@ -91,13 +91,23 @@ conda install -c conda-forge pip-tools
 
 3. Use `pip-sync` to install the dependencies listed in the requirements.in file:
     
-    ```bash
-    pip-sync requirements.in
-    ```
+```bash
+pip-sync requirements.in
+```
 
 4. You can ensure that the dependency installation was successful by running the following command: `pip list` or `conda list`.
 
 # Usage
+
+## OpenAI API
+
+To use the OpenAI API, you need to set the environment variable. Please create a file `.env` in the `config` folder and add the following line:
+    
+```bash
+OPENAI_API_KEY="your_api_key"
+ ```
+
+## Extracting and transforming data
 
 There are three main steps to generate the dataset:
 
