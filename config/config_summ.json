@@ -1,0 +1,15 @@
+{
+    "openai_model": "gpt-4o-mini",
+    "batch_size": 10,
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "frequency_penalty": 0.8,
+    "presence_penalty": 0.8,
+    "messages": [
+        {"role": "system", "content": "You are an assistant that summarizes texts."},
+        {"role": "user", "content": "Please, summarize the following text. Focus on synonyms, E number (European Union identifiers), food additive functional classes, and food industry applications: {text}"},
+        {"role": "user", "content": "Make sure to highlight food industry applications and do not add any other applications."},
+        {"role": "user", "content": "Build a paragraph no longer than 250 words."},
+        {"role": "user", "content": "Do not include any historical data or chemical compounds and pharmaceutical applications in the paragraph."}
+    ]
+}

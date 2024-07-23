@@ -1,0 +1,11 @@
+openai==1.35.3
+numpy==1.26.4
+beautifulsoup4==4.12.3
+datasets==2.20.0
+transformers==4.41.2
+tokenizers==0.19.1
+rich==13.7.1
+python-dotenv==1.0.1
+nltk==3.8.1
+spacy==3.7.5
+gliner-finetune==0.0.4

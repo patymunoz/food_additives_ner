@@ -1,0 +1,43 @@
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# virtual environments
+venv/
+env/
+ENV/
+*.pyc
+__pycache__/
+.env 
+
+# config files
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+*.sqlite3
+
+# config IDEs
+.vscode/
+.idea/
+
+# dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# temporal files
+*.tmp
+*.temp
+tmp/
+
+# config git
+.gitconfig
+
+# specific
+data/raw/
+data/processed/
+data/interim/
+notebooks/pruebas.ipynb
+
+config/.env/
